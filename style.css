@@ -1,0 +1,81 @@
+
+* {
+    margin: 0;
+    padding: 0;
+}
+body, h1 {
+    font-family: "Assistant", sans-serif;
+}
+
+
+.button {
+    border: none;
+    color: white;
+    padding: 13px 28px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 17px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    font-family: 'Assistant', sans-serif;
+}
+
+.button1 {
+    background-color: #FE80B6
+}
+
+.button1:hover {
+    background-color: #232323;
+    color: white;
+}
+
+.button2 {
+    background-color: #232323
+}
+
+.button2:hover {
+    background-color: #FE80B6;
+    color: white;
+}
+
+ul {
+    list-style-type: none;
+    overflow: hidden;
+    background-color: #232323;
+}
+
+li {
+    float: left;
+}
+
+.dropdownA {
+    display: none;
+    position: absolute;
+    background-color: #FE80B6;
+    min-width: 138px;
+}
+
+.dropdownA a {
+    color: white;
+    font-family: 'Assistant', sans-serif;
+    padding: 13px 28px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdownA a:hover {
+    background-color: #232323;
+}
+
+.dropdown:hover .dropdownA {
+    display: block;
+}
+
+body {
+    background-image: url("11144-sinyaya_matrica-noch-linii-liniya-matrica-1024x768.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
