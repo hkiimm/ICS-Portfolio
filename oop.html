@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+  table, td{
+    border: 1px solid white;
+    color: white;
+    font-family: 'Assistant', sans-serif;
+    font-size: 19px;
+    font-weight: 300;
+    padding: 1%;
+  }
+  </style>
+  <meta charset="UTF-8">
+  <link href="style1.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Assistant:200,300,400,500" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Courier+New:100,200" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+  <title>Portfolio - OOP</title>
+</head>
+<header>
+  <nav>
+    <ul>
+      <li><a href="#" class="button button1">HANNAH KIM</a></li>
+      <li><a href="index.html" class="button button2">HOME</a></li>
+      <li><a href="aboutme.html" class="button button2">ABOUT ME</a></li>
+      <li class="dropdown">
+        <a href="javascript:void(0)" class="button button2">TUTORIALS</a>
+        <div class="dropdownA">
+          <a href="oop.html">OOP</a>
+          <a href="arrays.html">ARRAYS/ARRAYLISTS</a>
+          <a href="recursion.html">RECURSION</a>
+          <a href="sortsearch.html">SORTING/SEARCHING</a>
+        </div>
+      </li>
+      <li><a href="projects.html" class="button button2">PROJECTS</a></li>
+      <li><a href="finalproject.html" class="button button2">FINAL PROJECT</a></li>
+      <li><a href="bibliography.html" class="button button2">BIBLIOGRAPHY</a></li>
+    </ul>
+  </nav>
+</header>
+<body>
+  <div class="format">
+    <main>
+      <h1>OBJECT ORIENTED PROGRAMMING</h1>
+      <br>
+      <hr>
+      <br>
+      <!-- objects and classes -->
+      <h2>OBJECTS AND CLASSES IN JAVA</h2>
+      <br>
+      <hr>
+      <br>
+      <!-- objects-->
+      <h3>OBJECTS</h3>
+      <p>
+        All objects in Java are created from a class. Objects in the real world have two characteristics:
+        state/attributes and behaviours. This can be directly translated to Java. Objects in Java have attributes
+        stored in instance variables, and methods that contain operations to manipulate the behaviours of the
+        object. Different objects have a different number of attributes and behaviours associated with it, and
+        objects may contain other objects. A Java program usually creates many objects by calling the constructor,
+        and these objects can interact with each other by invoking methods. An attribute of the object can be
+        directly accessed or changed using some methods, but not others. These methods are called accessor/mutator
+        methods.
+      </p>
+      <br>
+      <section id = "code">
+        <pre class="prettyprint">
+          <code>
+            /** This class shows how a new object is created in the
+             *  main method of the program.
+             */
+            public class Dog {
+
+              //constructor
+              /** Default constructor */
+              public Dog ()
+              {/* implementation code */}
+
+              public static void main (String[]args){
+                //creating an object of the class Dog
+                Dog maltese= new Dog;
+              }
+            }
+          </code>
+        </pre>
+      </section>
+      <br>
+      <!-- classes-->
+      <h3>CLASSES</h3>
+      <p>
+        A class is essentially a blueprint for the object, which is a single instance of the class. Each object
+        that is built from the same class have the same component. Therefore all objects of a certain type use a
+        class that contains commonly used fields and methods.
+      </p>
+      <br>
+      <section id = "code">
+        <pre class="prettyprint">
+          <code>
+            /** This program shows a basic outline of a class. */
+            public class Dog {
+
+              //constructor
+              /** Default constructor. */
+              public Dog ()
+              {/* implementation code */}
+
+              //constructor
+              /** Parameterized constructor.
+              *  Constructs a Dog with specific attributes. */
+              public Dog (String name, String breed, boolean hygiene)
+              { /* implementation code */}
+
+              //accessor method
+              /** Returns the breed of the dog. */
+              public String getBreed ()
+              {/* implementation code */}
+
+              //mutator method
+              /** Checks if the dog needs a bath or not. */
+              public void clean (String breed, boolean hygiene)
+              {/* implementation code */}
+            }
+          </code>
+        </pre>
+      </section>
+      <br>
+      <hr>
+      <br>
+      <!--public/private/static methods and variables-->
+      <h2>PUBLIC/PRIVATE/STATIC</h2>
+      <br>
+      <hr>
+      <br>
+      <!-- public -->
+      <h3>PUBLIC METHODS AND VARIABLES</h3>
+      <p>
+        Public methods and variables can be accessed by any other class. Main programs have very easy access to
+        public attributes. All classes in Java are public, but not all methods and variables within the class
+        have to be public as well. Public methods are declared using the keyword <code>public</code>.
+      </p>
+      <br>
+      <!-- private -->
+      <h3>PRIVATE METHODS AND VARIABLES</h3>
+      <p>
+        Private methods and variables use the keyword <code>private</code>, can only be accessed by the class that the
+        methods and variables belong to. Any other class cannot access its content. This is called encapsulation.
+      </p>
+      <br>
+      <!-- static -->
+      <h3>STATIC METHODS AND VARIABLES</h3>
+      <p>
+        Static variables and methods are common to all instances of the class. Only one copy of a static variable
+        is created and shared by the class. Static variables can be primitive data types or objects, and are declared
+        with the keyword <code>static</code> in front of it. Static methods can be invoked without the creation of an
+        object of the class. It's operations are associated with the class, rather than an object.
+      </p>
+      <br>
+      <hr>
+      <br>
+      <!-- methods-->
+      <h2>METHODS</h2>
+      <br>
+      <hr>
+      <br>
+      <!--constructors-->
+      <h3>CONSTRUCTORS</h3>
+      <p>
+        A constructor is a special method that gets called when a new object is created. The constructor of a
+        class has the same name as its class, and it does not have a return type. When the keyword <code>new</code> is used,
+        at least one constructor is used to create a new object. There are two types of constructors: the default
+        constructor which is a no-argument constructor, and the parameterized constructor.
+      </p>
+      <br>
+      <p>
+        The default constructor is a constructor that does not have any parameters. A default constructor is
+        created when the programmer doesn't define their own constructor. It is used to set the initial values
+        for instance variables or objects.
+      </p>
+      <br>
+      <section id = "code">
+        <pre class="prettyprint">
+          <code>
+            public class Dog {
+
+              //default constructor
+              public Dog ()
+              {/* implementation code */}
+
+              /* more implementation code not shown */
+            }
+          </code>
+        </pre>
+      </section>
+      <br>
+      <p>
+        The parameterized constructor is a constructor that has parameters. It is used to initialize instance
+        variables and objects with the specific values that are passed through the parameters.
+      </p>
+      <br>
+      <section id = "code">
+        <pre class="prettyprint">
+          <code>
+            public class Dog {
+
+              //parameterized constructor
+              public Dog (String name, String breed, boolean needsBath)
+              {/* implementation code */}
+
+              /* more implementation code not shown */
+            }
+          </code>
+        </pre>
+      </section>
+      <br>
+      <!-- accessors -->
+      <h3>ACCESSOR METHODS</h3>
+      <p>
+        An accessor method, also known as a getter method, returns information regarding the object, such as the
+        name of the Dog shown below. These methods access an object without altering any information. These methods
+        must always be <code>public</code> so it can be accessed by other classes.
+      </p>
+      <br>
+      <section id = "code">
+        <pre class="prettyprint">
+          <code>
+            /** Returns the breed of the dog. */
+            public String getBreed () {
+              return breed;
+            }
+          </code>
+        </pre>
+      </section>
+      <br>
+      <!-- mutators -->
+      <h3>MUTATOR METHODS</h3>
+      <p>
+        A mutator method, also known as a setter method, changes the attributes of an object by modifying the
+        values stored inside instance variables. The code below is an example of a mutator method that sets
+        whether or not the dog needs a bath or not. Mutator methods must also be accessed by other classes, and
+        therefore have to be <code>public</code>.
+      </p>
+      <br>
+      <section id = "code">
+        <pre class="prettyprint">
+          <code>
+            /** Checks if the dog needs a bath or not.
+             *  It checks the conditions of the day, and whether the Dog
+             *  went outside or not. */
+            public void clean (boolean wentOutside, String condition)
+            {
+              if (wentOutside == true && condition.equals"muddy")
+                needsBath = true;
+              else
+                needsBath = false;
+            }
+          </code>
+        </pre>
+      </section>
+      <br>
+      <!--return types/methods-->
+      <h3>RETURN TYPE</h3>
+      <p>
+        Certain methods in Java have certain return types. We know that a method is returning a value when an
+        Object's class name or primitive data type name, such as <code>int</code> or <code>String</code>, is used
+        in the methods header, instead of <code>void</code>. Methods that use the keyword void do not return a
+        value, therefore the reserved keyword return does not need to be used.
+      </p>
+      <br>
+      <section id = "code">
+        <pre class="prettyprint">
+          <code>
+            /** This method is an integer return-type method that adds two integer
+             *  values and returns the added value. */
+            public int addNumbers (int num1, int num2) {
+              int finalNum = num1 + num2;
+
+              //returns the added integer value
+              return finalNum;
+            }
+          </code>
+        </pre>
+      </section>
+      <br>
+      <p>
+        Return methods do not output actual values on to the screen. All methods with a return-type must contain a
+        return statement that is reachable by the code. There can be multiple return statements within the same
+        method, but only one return statement will be reached, and therefore be returned.
+      </p>
+      <br>
+      <section id = "code">
+        <pre class="prettyprint">
+          <code>
+            /** This method is an example of a boolean return-type
+             *  method that adds two integer values and returns
+             *  true if the numbers are below a certain value.
+             *  Only one of the return statements will be reached. */
+            public boolean addNumbers (int num1, int num2) {
+              int finalNum = num1 + num2;
+
+              if (finalNum <= 20) {
+                //returns true if the sum is under or equal to 20
+                return true;
+              }
+
+              //returns false if the sum is over 20
+              return false;
+            }
+          </code>
+        </pre>
+      </section>
+      <br>
+      <hr>
+      <br>
+      <!--variables-->
+      <h2>VARIABLES</h2>
+      <br>
+      <hr>
+      <br>
+      <!--instance-->
+      <h3>INSTANCE VARIABLES</h3>
+      <p>
+        Instance variables hold the attributes of the object created from the class. These variables are declared
+        inside a class, not within a method of the class. The variable is created when an object is created, and
+        ceases to exist once the object no longer exists. Each object will have its own copy of the variable. When
+        the instance variable of one object is modified, the same variable for another object will not be changed.
+        When instance variables are used, we specify the access level of the field, <code>public, private, protected</code>
+        unlike with local variables.
+      </p>
+      <br>
+      <section id = "code">
+        <pre class="prettyprint">
+          <code>
+            /** Examples of instance variables of a class. */
+            public class Dog {
+
+              //instance variables
+              private String name;
+              private String breed;
+
+              /* more implementation code not shown */
+            }
+          </code>
+        </pre>
+      </section>
+      <br>
+      <!--local-->
+      <h3>LOCAL VARIABLES</h3>
+      <p>
+        Local variables are defined within a method. The variable is created when the method is called, and
+        ceases to exist once the method stops executing.
+      </p>
+      <br>
+      <section id="code">
+        <pre class="prettyprint">
+          <code>
+            /** Examples of local variables of a class. */
+            public void eat (String food, int amount) {
+
+              //local variables
+              boolean hungry = false;
+              int calories = 0;
+
+              /* more implementation code not shown */
+            }
+          </code>
+        </pre>
+      </section>
+      <br>
+      <!--static-->
+      <h3>STATIC VARIABLES</h3>
+      <p>
+        Static variables are very similar to instance variables, except there will only be one copy of the variable
+        within a class no matter how many objects are created. The variable is created at the start of the program,
+        and ceases to exist once the program finishes executing. Unlike instance variables, changing the attribute
+        of the variable will affect all the objects in the class.
+      </p>
+      <br>
+      <section id = "code">
+        <pre class="prettyprint">
+          <code>
+            /** Examples of static variables of a class. */
+            public class Dog {
+
+              //static variables
+              public static String name;
+              public static String breed;
+
+              /* more implementation code not shown */
+            }
+          </code>
+        </pre>
+      </section>
+      <br>
+      <!--scope-->
+      <h3>SCOPE</h3>
+      <p>
+        The scope of a variable is how long the variable is in use for. It is the section of the program where
+        the variable can be accessed. Instance variables are declared inside the class, not inside a specific
+        method. Instance variables have a class level scope, and therefore can be accessed by any method at any
+        time while the program is running. Local variables on the other hand, have a method level scope, and can't
+        be accessed outside of the method. Once the method stops executing, the variable no longer exists.
+      </p>
+      <br>
+      <section id = "code">
+        <pre class="prettyprint">
+          <code>
+            /** Class level scope. */
+            public class Dog {
+
+              //instance variables
+              private String food;
+              private String breed;
+
+              /** Method level scope. */
+              public void eat (String food, int amount) {
+                //local variables
+                boolean hungry = false;
+                int calories = 0;
+
+                /* more implementation code not shown */
+              }
+
+              /* more implementation code not shown */
+            }
+          </code>
+        </pre>
+      </section>
+      <br>
+      <p>
+        The instance variables <code>food</code> and <code>breed</code> have a class level scope which means that
+        these variables are accessible anywhere in the class. The local variables <code>hungry</code> and <code>calories</code>
+        have a method level scope. These variables can be accessed while the code within the method is being run.
+      </p>
+      <br>
+      <hr>
+      <br>
+      <!--parameters-->
+      <h2>PARAMETERS</h2>
+      <br>
+      <hr>
+      <br>
+      <!--formal-->
+      <h3>FORMAL PARAMETERS</h3>
+      <p>
+        Formal parameters are a pass of an instance into a method. It is a parameter used in the method header that
+        passes information into the method. These variables receive the values passed to the method header when
+        the method is invoked. While the method is run, they are treated as local variables inside the method.
+      </p>
+      <br>
+      <section id = "code">
+        <pre class="prettyprint">
+          <code>
+            /** The variables 'food' and 'amount' are formal parameters
+             *  of the method eat. */
+            public void eat (String food, int amount) //formal parameters
+            {/* implementation code */}
+          </code>
+        </pre>
+      </section>
+      <br>
+      <!--actual-->
+      <h3>ACTUAL PARAMETERS</h3>
+      <p>
+        Actual parameters are the actual values passed into the method when it's invoked. The values passed as
+        actual parameters must correspond to the data types in the formal parameter of the method.
+      </p>
+      <br>
+      <section id = "code">
+        <pre class="prettyprint">
+          <code>
+            /** Method eat is called inside the main method of the program
+             *  with its corresponding parameters. */
+            public static void main (String[]args){
+              Dog maltese = new Dog ();
+              maltese.eat ("meat", 10); //actual parameters
+            }
+          </code>
+        </pre>
+      </section>
+      <br>
+      <!--pass by value-->
+      <h3>PASS BY VALUE</h3>
+      <p>
+        All parameters passed into a method through the method header are passed by value. The values passed as a
+        parameter is assigned to a local variable inside the method. Therefore when changes are made to that
+        variable, it does not affect the value of the original variable.
+      </p>
+      <br>
+      <section id = "code">
+        <pre class="prettyprint">
+          <code>
+            /** Within the brackets, the variable 'food' and 'amount'
+             *  are passed by value through the method header. */
+            public void eat (String food, int amount)
+            {/* implementation code */}
+          </code>
+        </pre>
+      </section>
+      <br>
+      <!--pass by reference-->
+      <h3>PASS BY REFERENCE</h3>
+      <p>
+        When a non primitive variable is passed by reference, changes made to that variable, affects the value of the original
+        variable. This is because the parameter references the the original variable. Arrays and Objects are passed
+        by value, but the value being passed through the parameter is a reference to the actual variable. Beware
+        that this doesn't mean that Arrays and Objects are passed by reference.
+      </p>
+      <br>
+      <hr>
+      <br>
+      <!--encapsulation-->
+      <h2>ENCAPSULATION</h2>
+      <br>
+      <hr>
+      <br>
+      <p>
+        Encapsulation is wrapping all the data in a program, the variables and the methods, as a single unit. It
+        binds the data and the code that manipulates the information together. Encapsulation is a way to prevent code from
+        outside of the class to access the data within the class. Therefore, encapsulation is also known as
+        data-hiding. The variables of the class will be hidden from other classes, and therefore the user won't be
+        able to directly access the object's data. The data can only be accessed by using a method from its own
+        class. We don't want the data to be directly accessible, because we want to protect it from being changed
+        or used incorrectly. Therefore the variables have to be declared as <code>private</code>.
+      </p>
+      <br>
+      <section id = "code">
+        <pre class="prettyprint">
+          <code>
+            /** This class demonstrates encapsulation. */
+            public class Dog {
+
+              /** Private variables can only be accessed
+               *  by publicly declared methods of the class.
+              private String name;
+              private int age;
+
+              /** Accessor method that gets the name of the dog. */
+              public String getName () {
+                return name;
+              }
+
+              /** Accessor method that gets the age of the dog. */
+              public String getAge () {
+                return age;
+              }
+
+              /** Mutator method that sets the name of the dog. */
+              public void setName (String newName) {
+                name = newName;
+              }
+
+              /** Mutator method that sets the age of the dog. */
+              public void setAge (int newAge) {
+                age = newAge;
+              }
+            }
+          </code>
+        </pre>
+      </section>
+      <br>
+      <p>
+        The class above is an example of encapsulation. You know that it is encapsulated because the
+        instance variables declared at the top of the class are <code>private</code>, and the setter and getter methods used
+        to access the private variables are <code>public</code>. Therefore, any class that wants to access the data of
+        <code>public class Dog</code> have to use the setter and getter methods. The code below is an example of a program that
+        can access the data inside the Dog class.
+      </p>
+      <br>
+      <section id = "code">
+        <pre class="prettyprint">
+          <code>
+            /** This class is a tester program that can access
+             *  the data of the Dog class. */
+            public class DogTest {
+
+              public static void main (String [] args) {
+                Dog maltese = new Dog ();
+
+                //Setter methods
+                maltese.setName ("Daisy");
+                maltese.setAge (1);
+
+                /** Display the values using getter methods because it
+                 *  has already been set using the setter methods.
+                 *  Cannot directly use the variable names. */
+                System.out.println (maltese.getName + " is " + maltese.getAge + " years old.");
+              }
+            }
+          </code>
+        </pre>
+      </section>
+      <br>
+      <hr>
+      <br>
+      <!--abstraction-->
+      <h2>ABSTRACTION</h2>
+      <br>
+      <hr>
+      <br>
+      <!--data-->
+      <h3>DATA ABSTRACTION</h3>
+      <p>
+        Abstraction is essentially only displaying the necessary components to the user. Anything necessary that
+        the user does not need to know is not displayed. This basically means that the user will know what the
+        object does, not how the object does it. Abstraction can be achieved by using abstract classes, or
+        interfaces.
+      </p>
+      <br>
+      <!--classes and methods-->
+      <h3>ABSTRACT CLASSES AND METHODS</h3>
+      <p>
+        Abstract classes are classes that represents the shared characteristics of certain objects. The purpose of an
+        abstract class is to be extended by its subclass. An abstract class will create objects of the characteristics
+        being declared, but no instance of the class is created. The class must be declared as <code>abstract</code> if even
+        one of the methods inside it is abstract. To extend an abstract class, all abstract methods have to be
+        implemented.
+      </p>
+      <br>
+      <section id = "code">
+        <pre class="prettyprint">
+          <code>
+            /** Declaration of an abstract class. */
+            public abstract class Shape {
+              /* more implementation codenot shown. */
+            }
+
+            /** Extending an abstract class. */
+            public class Rectangle extends Shape {
+              /* more implementation code not shown. */
+            }
+          </code>
+        </pre>
+      </section>
+      <br>
+      <p>
+        An abstract class can have abstract methods, but not all methods need to be abstract. These abstract
+        methods have to be overridden by its subclasses, or the subclass must be defined as <code>abstract</code> as well. The
+        abstract method in the abstract class basically acts like a placeholder, until it is implemented in the
+        subclass. An abstract method does not have a method body. A semi-colon at the end instead of a set of
+        curly braces. Make sure the same return type is used when you override the methods.
+      </p>
+      <br>
+      <section id = "code">
+        <pre class="prettyprint">
+          <code>
+            /** Abstract class with abstract method. */
+            public abstract class Shape
+            {
+              //Example of a declaration of an abstract method.
+              public abstract double perimeter ();
+
+              /* more implementation code not shown */
+            }
+          </code>
+        </pre>
+        <pre class="prettyprint">
+          <code>
+            /** Rectangle class that extends the abstract Shape
+             *  class above. */
+            public class Rectangle extends Shape
+            {
+              //Abstract method must be overridden
+              @Override
+              public double perimeter ()
+              {/* implementation code */}
+
+              /* more implementation code not shown */
+            }
+          </code>
+        </pre>
+      </section>
+      <br>
+      <!--interfaces-->
+      <h3>INTERFACES</h3>
+      <p>
+        Interfaces are used for total abstraction, which means that all the methods inside the class are <code>public
+        abstract</code>, and all variables are <code>public static final</code>. Interfaces are like classes, except an interface
+        is a framework of behaviours that a class can implement. Unlike classes, interfaces don't contain
+        constructors or instance variables and cannot be instantiated. They provide a blueprint of what a class
+        must do. Interfaces disregard hierarchy, and therefore can be implemented by any class. Classes can
+        implement multiple interfaces, and interfaces can also implement another interface.
+      </p>
+      <br>
+      <section id = "code">
+        <pre class="prettyprint">
+          <code>
+            /** Example of an interface. */
+            public interface Animal{
+              void eat ();
+              void calories ();
+            }
+          </code>
+        </pre>
+      </section>
+      <br>
+      <!--implementing and extending-->
+      <h3>IMPLEMENTING AND EXTENDING INTERFACES</h3>
+      <p>
+        A class that implements an interface must implement all the behaviours in the interface. If a class doesn't
+        implement all the methods, it must be declared <code>abstract</code>. The keyword <code>implements</code> must be used to implement
+        an interface. Make sure the same return type is used when you override the methods.
+      </p>
+      <br>
+      <section id = "code">
+        <pre class="prettyprint">
+          <code>
+            /** Example of a class implementing an interface. */
+            public class Dog implements Animal {
+              /* more implementation code not shown */
+            }
+          </code>
+        </pre>
+      </section>
+      <br>
+      <p>
+        Interfaces can also extend another interface, much like a class can extend another class. It can actually
+        extend multiple interfaces. Therefore a class that implements an interface that extends other interfaces,
+        must implement methods from all the interfaces.
+      </p>
+      <br>
+      <section id = "code">
+        <pre class="prettyprint">
+          <code>
+            /** Example of an interface extending another interface. */
+            public interface Mammal extends Animal {
+              /* more implementation code not shown */
+            }
+          </code>
+        </pre>
+      </section>
+      <br>
+      <br>
+      <hr>
+      <br>
+      <!--inheritance-->
+      <h2>INHERITANCE</h2>
+      <br>
+      <hr>
+      <br>
+      <!--super/sub class-->
+      <h3>SUPERCLASS AND SUBCLASS</h3>
+      <p>
+        Inheritance allows the subclass to inherit features, variables and methods, of its superclass. A superclass,
+        also known as a parent class has characteristics that will be inherited by a subclass. A subclass is a class
+        that inherits the characteristics of its superclass. When we want a subclass to inherit its superclass we
+        use the keyword <code>extends</code>.
+      </p>
+      <br>
+      <section id = "code">
+        <pre class="prettyprint">
+          <code>
+            /** Superclass */
+            public class Shape {
+              /* more implementation code not shown */
+            }
+
+            /** Subclass of class Shape. */
+            public class Rectangle extends Shape {
+              /* more implementation code not shown */
+            }
+          </code>
+        </pre>
+      </section>
+      <br>
+      <p>
+        A subclass inherits all the <code>public</code> and <code>protected</code> methods and variables of the superclass, but none of the
+        <code>private</code> methods and variables. To call the superclass, it is called using the keyword <code>super()</code>. To access
+        public fields and methods the keyword <code>super.</code> is used. If the subclass wants to access private variables,
+        it must use the accessor or mutator methods. A subclass can have additional methods and variables that its
+        superclass does not have. Subclasses can also override a method it inherits from its superclass. If the
+        classes are on the same level in hierarchy tree, they don't inherit anything from each other. Below is an
+        example of inheritance taken from the Barron's textbook.
+      </p>
+      <br>
+      <section id = "code">
+        <pre class="prettyprint">
+          <code>
+            /** Superclass */
+            public class Student
+            {
+              //data members
+              public final static int NUM_TESTS = 3;
+              private String name;
+              private int [] tests;
+              private String grade;
+
+              //constructor
+              public Student () {
+                name = "";
+                tests = new int [NUM_TESTS];
+                grade = "";
+              }
+
+              //constructor
+              public Student (String studName, int [] studTests, String studGrade) {
+                name = studName;
+                tests = studTests;
+                grade = studGrade;
+              }
+
+              public String getName () {
+                return name;
+              }
+
+              public String getGrade () { r
+                eturn grade;
+              }
+
+              public void setGrade (String newGrade) {
+                grade = newGrade;
+              }
+
+              public void computeGrade () {
+                if (name.equals (" "))
+                grade = "No grade";
+                else if (getTestAverage () >= 65)
+                grade = "Pass";
+                else
+                grade = "Fail";
+              }
+
+              public double getTestAverage () {
+                double total = 0;
+                for (int score : tests)
+                total += score;
+                return total/NUM_TESTS;
+              }
+            }
+          </code>
+        </pre>
+        <pre class="prettyprint">
+          <code>
+            /** Subclass that inherits the superclass Student */
+            public class UnderGrad extends Student
+            {
+              public UnderGrad ()    //default constructor
+              { super (); }
+
+              public UnderGrad (String studName, int [] studTests, String  studGrade)
+              { super (studName, studTests, studGrade); }
+
+              public void computeGrade () {
+                if (getTestAverage () >= 70)
+                setGrade ("Pass");
+                else
+                setGrade ("Fail");
+              }
+            }
+          </code>
+        </pre>
+      </section>
+      <br>
+      <p>
+        The code above was used as an example because it efficiently and accurately demonstrates the use of
+        inheritance. It uses a real life example, such as determining if you failed or passed, to demonstrate the
+        relationship between a superclass and a subclass.
+      </p>
+      <br>
+      <!--hierarchy-->
+      <h3>INHERITANCE HIERARCHY</h3>
+      <p>
+        A class can be a subclass of one class,  but the superclass of another. These relationships are demonstrated
+        using empty arrows that point from the subclass to its corresponding superclass. The arrow represents an
+        is-a relationship between the two classes. The is-a relationship can apply to two classes that are not
+        consecutive in the hierarchical levels. It can apply to a subclass, and the superclass of its superclass.
+        Below are three types of inheritance: single inheritance, multilevel inheritance, and hierarchical
+        inheritance.
+      </p>
+      <br>
+      <p><a href = "https://simplesnippets.tech/wp-content/uploads/2018/04/java-types-of-inheritance.jpg" target="_blank"><img src="hierarchy.png"></a></p>
+      <br>
+      <hr>
+      <br>
+      <!--polymorphism-->
+      <h2>POLYMORPHISM</h2>
+      <br>
+      <hr>
+      <br>
+      <p>
+        Polymorphism is when an object can have many different forms. The method that is executed when the program
+        is run, depends on the object type. Polymorphism only applies to methods that are overridden in subclasses.
+        To access an object, it must be done through a reference variable. The method ran is often determined by the
+        type of the reference variable. In Java, the method that will be run is selected during run-time
+        (dynamic binding).
+      </p>
+      <br>
+      <p>
+        Polymorphism is used in many programs because only one superclass is needed. Many subclasses can be created
+        and override any methods inherited from its superclass. This makes it very easy to add new classes without
+        having to create new methods, because it can inherit it from its superclass.
+      </p>
+      <br>
+      <!--binding-->
+      <h3>DYNAMIC BINDING</h3>
+      <p>
+        Dynamic binding is determining which instance method to run. This is used for overridden methods.
+        Contrastingly, static binding is determining which overloaded method to run. When dynamic binding is used,
+        the compiler does not determine which method to run. How a method is going to be called is actually
+        determined by the run-time environment.
+      </p>
+      <br>
+      <section id = "code">
+        <pre class="prettyprint">
+          <code>
+            //student objects
+            Student s = null;
+            Student u = new UnderGrad ("Hannah Kim", new int[] {95, 93, 90}, "none");
+
+            /* more implementation code not shown */
+
+            s.computeGrade ();
+          </code>
+        </pre>
+      </section>
+      <br>
+      <p>
+        The short snippet of the code above is based off the Student and UnderGrad classes shown above. Although
+        the method computeGrade exists in both the superclass and subclass, the correct method to be run will be
+        selected based on the object type during run-time.
+      </p>
+      <br>
+      <!--overriding/overloading-->
+      <h3>OVERRIDING VS. OVERLOADING</h3>
+      <p>
+        Overriding is when there are two methods with the same name, parameters, and return type. The superclass
+        and subclass will have the same method. Overriding allows the subclass to alter the implementation of the
+        method that is declared in the superclass. The behaviours inherited from the superclass is modified to
+        adjust itself as needed to the subclass. For overriding, the object type is used to determine which method
+        to run during run-time. The example below was taken from an online source, and it was used because it
+        demonstrates overriding in a short and concise manner.
+      </p>
+      <br>
+      <section id = "code">
+        <pre class="prettyprint">
+          <code>
+            public class Dog{
+              public void bark(){
+                System.out.println("bark");
+              }
+            }
+
+            public class Maltese extends Dog{
+              public void sniff(){
+                System.out.println("sniff");
+              }
+
+              public void bark(){
+                System.out.println("woof");
+              }
+            }
+
+            public class OverridingTest{
+              public static void main(String [] args){
+                Dog dog = new Hound();
+                dog.bark();
+              }
+            }
+          </code>
+        </pre>
+      </section>
+      <br>
+      <p>
+        Overloading on the other hand is when there are multiple methods with the same name, but different
+        parameters. For overloading, the object's reference type is used to determine which method to run during
+        compile time. The example below was taken from an online source, and it was used because it demonstrates
+        overloading in a simple concept.
+      </p>
+      <br>
+      <section id = "code">
+        <pre class="prettyprint">
+          <code>
+            public class Dog{
+              public void bark(){
+                System.out.println("woof");
+              }
+
+              //overloading method has the same method name, but different parameters
+              public void bark(int num){
+                for(int i = 0 ; i < num ; i++) {
+                  System.out.println("woof");
+                }
+              }
+            }
+          </code>
+        </pre>
+      </section>
+      <br>
+      <hr>
+      <br>
+      <!--down/up casting-->
+      <h2>DOWNCASTING/UPCASTING</h2>
+      <br>
+      <hr>
+      <br>
+      <p>
+        Upcasting is when you cast a subclass to a superclass. Upcasting is done automatically because of what Java
+        does during run-time. When a subclass is upcasted to a superclass, the object itself isn't changed, it just
+        has a different label. Upcasting can be done when there is an is-a relationship between two classes.
+      </p>
+      <br>
+      <p>
+        Downcasting is when you cast a superclass to a subclass. Unlike upcasting, downcasting is not done
+        automatically. Downcasting will be allowed by the compiler, but it will be checked if the cast makes sense
+        before execution. For example, let's use <code>Dog</code> as the subclass and <code>Mammal</code> as the superclass. When you downcast
+        from <code>Mammal</code> to <code>Dog</code>, a <code>Mammal</code> is not always a <code>Dog</code>.
+        Therefore it throws a <code>ClassCastException</code>. But when the <code>Mammal</code> is a <code>Dog</code>,
+        the program will run without crashing.
+      </p>
+      <br>
+      <section id="code">
+        <pre class="prettyprint">
+          <code>
+            //Downcasting that is valid
+            Mammal m = new Dog(); //Mammal is a Dog
+            Dog d = (Dog) m; //Dog is a Dog
+          </code>
+        </pre>
+        <pre class="prettyprint">
+          <code>
+            //Downcasting that will throw a ClassCastException
+            Mammal m = new Mammal (); //Mammal is a Mammal
+            Dog d = (Dog) m; //Mammal is not a Dog
+          </code>
+        </pre>
+      </section>
+      <br>
+      <hr>
+      <br>
+      <!--advantages/disadvantages-->
+      <h2>ADVANTAGES AND DISADVANTAGES</h2>
+      <br>
+      <hr>
+      <br>
+      <h3>ADVANTAGES</h3>
+      <li>The concept of object oriented programming is easy to understand and grasp</li>
+      <li>Object oriented programming can be related to scenarios in the real world</li>
+      <li>
+        You can recycle classes used in object oriented programming without having to write them over and over again
+      </li>
+      <li>Programs are easier to test</li>
+      <br>
+      <h3>DISADVANTAGES</h3>
+      <li>Actually writing the program can be challenging although the concept is easy to understand</li>
+      <li>
+        Object oriented programming deals with objects, therefore the programmer should base things off of objects
+      </li>
+      <li>Programs are much larger than procedural programming which means execution is slower</li>
+      <br>
+      <hr>
+      <br>
+      <h2>SAMPLE PROBLEM</h2>
+      <br>
+      <hr>
+      <br>
+      <p>
+        I have attached a sample problem below that demonstrates a concept of object-oriented programming. The problem
+        below is to create an interface and a class, and the class must implement the interface.
+      </p>
+      <br>
+      <section id = "code">
+        <pre class="prettyprint">
+          <code>
+            //This is the PersonalInfo interface
+            import java.util.Calendar;
+
+            public interface PersonalInfo {
+              Calendar getFileCreationDate ();
+              int getCurrentAge (int birthYear);
+            }
+          </code>
+        </pre>
+        <pre class="prettyprint">
+          <code>
+            //This is the class that implements the PersonalInfo interface
+            import java.util.Calendar;
+
+            public class PersonRecord implements PersonalInfo {
+              private Calendar creationDate = Calendar.getInstance ();
+              private int currentAge;
+
+              public PersonRecord (int birthYear) {
+                currentAge = getCurrentAge (birthYear);
+              }
+
+              public Calendar getFileCreationDate () {
+                return creationDate;
+              }
+
+              public int getCurrentAge (int birthYear) {
+                return Calendar.getInstance().get(Calendar.YEAR) - birthYear;
+              }
+            }
+          </code>
+        </pre>
+      </section>
+      <br>
+      <hr>
+      <br>
+      <!--dont fear assignment-->
+      <h2>DON'T FEAR THE OOP - EXAMPLE</h2>
+      <br>
+      <hr>
+      <br>
+      <embed src="dontfeartheoop.pdf#toolbar=0" type="application/pdf" width="100%" height="600px"/>
+      <br>
+      <hr>
+      <br>
+    </main>
+  </div>
+</body>
+</html>

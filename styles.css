@@ -1,7 +1,10 @@
-body,h1 {font-family: "Assistant", sans-serif;}
+body,h1 {
+    font-family: "Assistant", sans-serif;
+}
 *{
     margin:0;
     padding:0;
+    box-sizing: border-box;
 }
 .button {
     border: none;
@@ -10,38 +13,41 @@ body,h1 {font-family: "Assistant", sans-serif;}
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 17px;
+    font-size: 18px;
     transition-duration: 0.4s;
     cursor: pointer;
     font-family: 'Assistant', sans-serif;
+    font-weight: 400;
 }
 .button1 {
-    background-color: #FE80B6
-}
-.button1:hover {
-    background-color: #232323;
-    color: white;
+    background-color: #87CEFA;
 }
 .button2 {
-    background-color: #232323
+    background-color: black
 }
 .button2:hover {
-    background-color: #FE80B6;
+    background-color: #87CEFA;
     color: white;
 }
-ul {
+nav{
+    width: 100%;
+    top:0;
+}
+nav ul {
     list-style-type: none;
     overflow: hidden;
-    background-color: #232323;
+    background-color: black;
 }
-li {
+nav ul li {
     float: left;
 }
 .dropdownA {
     display: none;
     position: absolute;
-    background-color: #FE80B6;
+    background-color: #87CEFA;
     min-width:138px;
+    font-size: 18px;
+    font-weight: 400;
 }
 .dropdownA a {
     color: white;
@@ -51,7 +57,73 @@ li {
     display: block;
     text-align: left;
 }
-.dropdownA a:hover {background-color: #232323;}
+.dropdownA a:hover {
+    background-color: black;
+}
 .dropdown:hover .dropdownA{
     display: block;
+}
+.format{
+    width: 80%;
+    margin: 0 auto;
+}
+main {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    color: black;
+    font-family: 'Assistant', sans-serif;
+}
+#code {
+    background-color: rgba(192, 192, 192, .1);
+}
+code {
+    font-family: "Courier New", Courier, monospace;
+    line-height: 17px;
+    font-size: 15px;
+    font-weight: 200;
+}
+main p code {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 15px;
+    font-weight: bold;
+    color: #000080;
+}
+main hr {
+    border: 2px solid #87CEFA;
+}
+main h1{
+    font-size: 33px;
+    text-align: center;
+    font-weight: 500;
+}
+main h2{
+    font-size: 27px;
+    font-weight: 500;
+}
+main h3 {
+    font-size: 25px;
+    font-weight: 400;
+}
+main p{
+    font-size: 19px;
+    font-weight: 300;
+}
+main h2 img {
+    width: 250px;
+    height: 330px;
+    border: 1px solid black;
+    float: right;
+}
+main img {
+    width: 260px;
+    height: 276px;
+    border: 1px solid black;
+    float: right;
+}
+main table tr td a img {
+  border: 0;
+  width:100px;
+  height:100px;
+  margin: auto;
+  width: 50%;
 }

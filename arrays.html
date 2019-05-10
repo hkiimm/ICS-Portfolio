@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link href="style3.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Assistant:300,400,500" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Courier+New:100" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+  <title>Portfolio - Arrays/Arraylists</title>
+</head>
+<header>
+  <nav>
+    <ul>
+      <li><a href="#" class="button button1">HANNAH KIM</a></li>
+      <li><a href="index.html" class="button button2">HOME</a></li>
+      <li><a href="aboutme.html" class="button button2">ABOUT ME</a></li>
+      <li class="dropdown">
+        <a href="javascript:void(0)" class="button button2">TUTORIALS</a>
+        <div class="dropdownA">
+          <a href="oop.html">OOP</a>
+          <a href="arrays.html">ARRAYS/ARRAYLISTS</a>
+          <a href="recursion.html">RECURSION</a>
+          <a href="sortsearch.html">SORTING/SEARCHING</a>
+        </div>
+      </li>
+      <li><a href="projects.html" class="button button2">PROJECTS</a></li>
+      <li><a href="finalproject.html" class="button button2">FINAL PROJECT</a></li>
+      <li><a href="bibliography.html" class="button button2">BIBLIOGRAPHY</a></li>
+    </ul>
+  </nav>
+</header>
+<body>
+  <div class="format">
+    <main>
+      <h1>ARRAYS AND ARRAYLISTS</h1>
+      <br>
+      <hr>
+      <br>
+      <h2>ARRAYS</h2>
+      <br>
+      <hr>
+      <br>
+      <p>
+        Arrays are used to store multiple pieces of information, of the same data type, in one place. Data types can be primitive,
+        such as an <code>int</code> or <code>double</code>, or it can be an object. For example, an array can contain a list of student numbers. The index
+        of an array ranges from <code>arr[0]</code> to <code>arr[arr.length - 1]</code>. If at any point, you try to access elements that are not
+        within the arrays length, Java will throw an <code>ArrayIndexOutOfBoundsExcpetion</code>.
+      </p>
+      <br>
+      <h3><a href = "https://docs.oracle.com/javase/tutorial/figures/java/objects-tenElementArray.gif" target="_blank"><img src="arrays.gif"></a></h3>
+      <br>
+      <h3>INITIALIZATION</h3>
+      <p>
+        Since arrays are objects in Java, it requires the keyword <code>new</code> when an empty array is being declared. When a value is declared
+        within the second pair of square brackets, it determines the length of the array. The length of the array is set as a constant
+        and cannot be modified, therefore no more than the set number of elements can be stored within the array. An empty array will
+        set <code>int</code> and <code>double</code> to 0, <code>boolean</code> to false, and objects will reference to null. It can be declared as such:
+      </p>
+      <br>
+      <section id="code">
+        <pre class="prettyprint">
+          <code>
+            int [] arr = new int [10];
+          </code>
+        </pre>
+      </section>
+      <br>
+      <p>
+        To set values to the elements within an empty array, you need to use the arrays name followed by a set of square brackets,
+        and the index of the elements location. You can choose to set values to only some indexes, and not others. It can be declared
+        as such:
+      </p>
+      <br>
+      <section id="code">
+        <pre class="prettyprint">
+          <code>
+            int [] arr = new int [10];
+            arr[0] = 5;
+            arr[1] = 7;
+          </code>
+        </pre>
+      </section>
+      <br>
+      <p>
+        An array can also be initialized with a set of values using curly braces and commas. It can be declared as such:
+      </p>
+      <br>
+      <section id="code">
+        <pre class="prettyprint">
+          <code>
+            int [] arr = {1, 2, 3, 4, 5};
+          </code>
+        </pre>
+      </section>
+      <br>
+      <h3>ACCESSING ELEMENTS</h3>
+      <p>
+        Arrays can be accessed by using the name of the array, and square brackets with the index of the element. It would look like this:
+      </p>
+      <br>
+      <section id="code">
+        <pre class="prettyprint">
+          <code>
+            arr[i]
+            arr[0]
+          </code>
+        </pre>
+      </section>
+      <br>
+      <p>
+        When you need to access all the elements within the array, you can use a for loop or a for-each loop. A for-each loop is
+        used to access the elements within the array, when you don't need to modify or set any values within the array. For-each
+        loops also do not keep track of the index.
+      </p>
+      <br>
+      <section id="code">
+        <pre class="prettyprint">
+          <code>
+            int i = 0;
+            for (int num : arr) {
+              if (num == i)
+                i++;
+              return i;
+            }
+          </code>
+        </pre>
+      </section>
+      <br>
+      <p>
+        A for loop is used to access the index of the element and can modify the values of the elements. When traversing an array,
+        the for loop runs from <code>arr[0]</code> to <code>arr[arr.length - 1]</code>. The index i starts at 0, the first element, and then continues
+        to increase until it has gone through the entire array.
+      </p>
+      <br>
+      <section id="code">
+        <pre class="prettyprint">
+          <code>
+            for (int i = 0 ; i < arr.length ; i ++) {
+              arr[i] = i + 1;
+            }
+          </code>
+        </pre>
+      </section>
+      <br>
+      <hr>
+      <br>
+      <h2>TWO-DIMENSIONAL ARRAYS</h2>
+      <br>
+      <hr>
+      <br>
+      <h3>INITIALIZATION</h3>
+      <p>
+        Just like one-dimensional arrays, two-dimensional arrays can be initialized using the keyword <code>new</code>, or with a set of values.
+        Creating a new 2D array is quite similar to creating a 1D array, except you now have 2 pairs of square brackets. It can be
+        declared as such:
+      </p>
+      <br>
+      <section id="code">
+        <pre class="prettyprint">
+          <code>
+            int [][] arr = new int [5][5];
+          </code>
+        </pre>
+      </section>
+      <br>
+      <p>
+        Once again like 1D arrays, 2D arrays can be initialized with values using curly braces and commas. It can be declared as such:
+      </p>
+      <br>
+      <section id="code">
+        <pre class="prettyprint">
+          <code>
+            int [][] arr = {{1, 2, 3}, {1, 2, 3}, {1, 2, 3}};
+          </code>
+        </pre>
+      </section>
+      <br>
+      <h3>ACCESSING ELEMENTS</h3>
+      <p>
+        When you're accessing elements of 2D arrays, you must specify the index of the row and column you're looking for. Instead
+        of using one set of square brackets, you use two pairs with the indices you would like to access. It would look like this:
+      </p>
+      <br>
+      <section id="code">
+        <pre class="prettyprint">
+          <code>
+            arr [i][x]
+            arr [0][1]
+          </code>
+        </pre>
+      </section>
+      <br>
+      <p>
+        Traversing two-dimensional arrays now uses two for loops instead of one, because we need to access the index of the row
+        and column. Instead, you cannot use <code>arr.length</code> to find the length of the array. Now, <code>arr.length</code> returns the number of rows,
+        not the number of elements. To find the number of columns, or number of elements in that row, you can use <code>row[0].length</code>. The
+        code example below is how you would traverse a 2D array using for loops.
+      </p>
+      <br>
+      <section id="code">
+        <pre class="prettyprint">
+          <code>
+            //traverses the rows
+            for (int i = 0 ; i < arr.length ; i++) {
+              //traverses the columns
+              for (int x = 0 ; x < arr[i].length ; x++) {
+                System.out.println (arr[i][x] + " ");
+              }
+            }
+          </code>
+        </pre>
+      </section>
+      <br>
+      <hr>
+      <br>
+      <h2>ARRAYLISTS</h2>
+      <br>
+      <hr>
+      <br>
+      <p>
+        The arraylist class from the <code>java.util</code> library is another way to store objects. Arraylists have the advantage of being
+        able to modify the length to fit the elements as needed. Arraylists are very dynamic, which allows them to grow and shrink
+        appropriately. They can add and remove elements by implementing the <code>List < E ></code> interface. The following imports should be made:
+      </p>
+      <br>
+      <section id="code">
+        <pre class="prettyprint">
+          <code>
+            import java.util.ArrayList;
+            import java.util.List;
+          </code>
+        </pre>
+      </section>
+      <br>
+      <p>or</p>
+      <br>
+      <section id="code">
+        <pre class="prettyprint">
+          <code>
+            import java.util.*;
+          </code>
+        </pre>
+      </section>
+      <br>
+      <h3>INITIALIZATION</h3>
+      <p>
+        Just like arrays, arraylists require the keyword new because it is a class. Unlike arrays, you cannot
+        set the values of an arraylist while you're declaring it. Primitive data types such as <code>int, double, char, boolean</code>
+        cannot be stored in arraylists. To declare an arraylist, you must use the <code>< ></code> symbols. It can be
+        declared as such:
+      </p>
+      <br>
+      <section id="code">
+        <pre class="prettyprint">
+          <code>
+            Arraylist < Integer > arr = new ArrayList < Integer > ();
+          </code>
+        </pre>
+      </section>
+      <br>
+      <h3>LIST< E > INTERFACE</h3>
+      <p>
+        A list of type E elements are held in the List < E > Interface. The List < E > Interface is important to
+        arraylists because it provides the functions to access and modify the elements within the list. The most
+        frequently used methods retrieved from the Barron's textbook are:
+      </p>
+      <ul style = "margin-left: 40px">
+        <li>boolean add (E element) - adds the element to the end of the list</li>
+        <li>void add (int index, E element) - adds the element at the index</li>
+        <li>E remove (int index) - removes the element at the index</li>
+        <li>E get (int index) - returns the element at the index</li>
+        <li>E set (int index, E element) - replaces the element at the index, with the new element</li>
+        <li>int size () - returns the number of elements in the list</li>
+      </ul>
+      <br>
+      <h3>ACCESSING ELEMENTS</h3>
+      <p>
+        Arraylists can be accessed using both a for loop or a for-each loop. Below is an example of traversing
+        an arraylist using a for loop.
+      </p>
+      <br>
+      <section id="code">
+        <pre class="prettyprint">
+          <code>
+            for (int i = 0 ; i < arr.size() ; i++){
+              if (arr.get(i).equals(num))
+                return true;
+            }
+            return false;
+          </code>
+        </pre>
+      </section>
+      <br>
+      <p>
+        Arraylists can be accessed using for-each loops as well, as shown below:
+      </p>
+      <br>
+      <section id="code">
+        <pre class="prettyprint">
+          <code>
+            ArrayList< Integer > arr = new ArrayList< Integer >();
+            //adds elements to the arraylist
+            arr.add(1);
+            arr.add(2):
+            arr.add(3);
+            //uses a for loop to display contents of the list
+            for (String s : arr)
+              System.out.println (s);
+          </code>
+        </pre>
+      </section>
+      <br>
+      <hr>
+      <br>
+      <h2>SAMPLE CODE</h2>
+      <br>
+      <hr>
+      <br>
+      <p>
+        This is a short example on the application of arrays and arraylists. The CountingCards class counts the points
+        of the hand and organizes the hand by suits and in order of highest to lowest.
+      </p>
+      <br>
+      <section id="code">
+        <pre class="prettyprint">
+          <code>
+            import java.io.*;
+            import java.util.*;
+
+            public class CountingCards {
+
+              private static ArrayList< String >bridgeHand = new ArrayList< > ();
+              String cards = "23456789TJQKA";
+              String faceCard = "AKQJ";
+              String suits = "SHDC";
+
+              public void readValues (String fileName) {
+                BufferedReader input;
+                String temp = "";
+
+                while(true) {
+                  try {
+                    input = new BufferedReader(new FileReader(fileName));
+                    temp = input.readLine();
+                    while (temp != null) {
+                      for (int i = 0; i < 4; i++) {
+                        bridgeHand.add(temp);
+                        temp = input.readLine();
+                      }
+                    }
+                    input.close();
+                    break;
+                  }catch(IOException e){
+                  }
+                }
+              }
+
+              public int search (char suit)
+              {
+                for (int i = 0 ; i < suits.length () ; i++)
+                {
+                  if (suits.charAt (i) == suit)
+                  {
+                    return i;
+                  }
+                }
+                return -1;
+              }
+
+              public boolean cardValue(String cardHand)
+              {
+                int num = 0;
+                boolean finalH = false;
+
+                for (int i = 0; i < cards.length();i++) {
+                  for (int x = 0; x < cardHand.length();x++) {
+                    if (cardHand.charAt(x) == cards.charAt(i))
+                    num++;
+                  }
+                }
+                finalH = !(num==cardHand.length());
+                return finalH;
+              }
+
+              public ArrayList< String > test(String cards)
+              {
+                ArrayList< String > newHand = new ArrayList< String >();
+                int finalValue = 0;
+                char[] [] cardS = new char [2] [13];
+
+                if (cards.length() != 26) {
+                  newHand.add("Sorry, this hand is not valid!");
+                  return newHand;
+                }
+                else {
+                  for (int i = 0; i < cards.length(); i++) {
+                    int num = i % 2;
+                    int num2 = i / 2;
+                    cardS[num][num2] = cards.charAt(i);
+                  }
+                }
+                if (cardValue (new String(cardS[0]))) {
+                  newHand.add("Sorry, this hand is not valid!");
+                  return newHand;
+                }
+                else {
+                  for (int i = 0; i < cardS[0].length; i++) {
+                    for (int x = 0; x < faceCard.length(); x++) {
+                      if (cardS[0][i] == faceCard.charAt(x)) {
+                        finalValue += (x + 1);
+                        break;
+                      }
+                    }
+                  }
+                }
+
+                String[] suits = {"","","",""};
+                for (int i = 0 ; i < cardS [0].length ; i++) {
+                  if (cardS [1] [i] != -1) {
+                    suits [search (cardS [1] [i])] += (cardS [0] [i]);
+                  }
+                  else {
+                    newHand.add("Sorry, this hand is not valid!");
+                    return newHand;
+                  }
+                }
+
+                String[] suitName = {"Spades: ","Hearts: ","Diamonds: ","Clubs: "};
+                for (int i = 0 ; i < suits.length ; i++) {
+                  if (i < 4) {
+                    newHand.add(suitName[i] + sort(suits[i]));
+                  }
+                }
+                for (int i = 0 ; i < newHand.size() ; i++) {
+                  if (newHand.get(i).length() < 3) {
+                    finalValue += (3 - newHand.get(i).length());
+                  }
+                }
+                newHand.add("The total of the hand is: "+ finalValue);
+                return newHand;
+              }
+
+              public int find (char card)
+              {
+                int num = 0;
+
+                while (card != cards.charAt(num))
+                {
+                  num++;
+                }
+                return num + 1;
+              }
+
+              public String sort(String cards)
+              {
+                String temp1 = cards.substring(0, cards.length()/2);
+                String temp2 = cards.substring(cards.length()/2);
+                String sort = "";
+
+                if (cards.length()>1) {
+                  while (temp1.length() != 0 && temp2.length() != 0) {
+                    if (find(temp1.charAt(0)) > find(temp2.charAt(0))) {
+                      sort += temp1.charAt(0);
+                      temp1 = temp1.substring(1);
+                    }
+                    else {
+                      sort += temp2.charAt(0);
+                      temp2 = temp2.substring(1);
+                    }
+                  }
+                  if (temp1.length() != 0) {
+                    sort += temp1;
+                  }
+                  else {
+                    sort += temp2;
+                  }
+                  return sort;
+                }
+                return cards;
+              }
+
+              public static void main (String[]args)
+              {
+                CountingCards test = new CountingCards ();
+                test.readValues("BridgeHands.txt");
+                for (int i = 0; i < bridgeHand.size();i++) {
+                  System.out.println(test.test(bridgeHand.get(i)));
+                }
+              }
+            }
+          </code>
+        </pre>
+      </section>
+      <br>
+      <hr>
+      <br>
+    </main>
+  </div>
+</body>
+</html>

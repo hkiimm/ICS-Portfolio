@@ -1,13 +1,11 @@
-
-* {
-    margin: 0;
-    padding: 0;
-}
-body, h1 {
+body,h1 {
     font-family: "Assistant", sans-serif;
 }
-
-
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
 .button {
     border: none;
     color: white;
@@ -21,44 +19,37 @@ body, h1 {
     font-family: 'Assistant', sans-serif;
     font-weight: 400;
 }
-
 .button1 {
     background-color: #87CEFA;
 }
-
 .button2 {
-    background-color: black;
+    background-color: black
 }
-
 .button2:hover {
     background-color: #87CEFA;
     color: white;
 }
-
 nav{
     width: 100%;
     top:0;
+
 }
 nav ul {
-
     list-style-type: none;
     overflow: hidden;
     background-color: black;
 }
-
 nav ul li {
     float: left;
 }
-
 .dropdownA {
     display: none;
     position: absolute;
-    background-color: black;
-    min-width: 138px;
+    background-color: #87CEFA;
+    min-width:138px;
     font-size: 18px;
     font-weight: 400;
 }
-
 .dropdownA a {
     color: white;
     font-family: 'Assistant', sans-serif;
@@ -67,40 +58,69 @@ nav ul li {
     display: block;
     text-align: left;
 }
-
 .dropdownA a:hover {
-    background-color: #87CEFA;
+    background-color: black;
 }
 
-.dropdown:hover .dropdownA {
+.dropdown:hover .dropdownA{
     display: block;
 }
-main {
+.format{
     width: 80%;
     margin: 0 auto;
-    margin-top: 200px;
+}
+main {
+    margin-top: 20px;
     margin-bottom: 40px;
     color: black;
     font-family: 'Assistant', sans-serif;
+}
+#code {
+    background-color: rgba(192, 192, 192, .3);
+}
+code {
+    font-family: "Courier New", Courier, monospace;
+    line-height: 17px;
+    font-size: 15px;
+    font-weight: 200;
+}
+
+main p code {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 15px;
+    font-weight: bold;
+    color: #000080;
 }
 main hr {
     border: 2px solid #87CEFA;
 }
 main h1{
-    font-size: 15px;
-    font-weight: 400;
-}
-main h2{
-    font-size: 50px;
+    font-size: 33px;
+    text-align: center;
     font-weight: 500;
 }
-main p {
-    font-size: 17px;
+main h2{
+    font-size: 27px;
+    font-weight: 500;
+}
+main h3 {
+    font-size: 25px;
+    font-weight: 400;
+}
+main p, li {
+    font-size: 19px;
     font-weight: 300;
 }
-main h3 a{
-    text-decoration: none;
+main p a {
     color: black;
-    font-size: 20px;
-    font-weight: 400;
+    font-size: 19px;
+    font-weight: 300;
+    }
+main img {
+    width: auto;
+    height: 370px;
+}
+main h3 img {
+    width: 400px;
+    height: auto;
 }
